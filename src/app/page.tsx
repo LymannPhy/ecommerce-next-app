@@ -32,19 +32,21 @@ export default async function Home() {
   return (
     <>
       <div className="mt-10 flex justify-center text-center flex-col flex-wrap gap-5">
-        <h1 className="font-bold text-large uppercase font-poppins">Product</h1>
+        <h1 className="mb-5 text-2xl font-bold !leading-[1.208] text-dark sm:text-[42px] lg:text-[40px] xl:text-3xl">
+          Any types of product, you discover
+        </h1>
       </div>
       <div className="mt-10 flex justify-center flex-wrap gap-5">
-        <Suspense fallback={<LoadingComponent/>} >
-        {products?.map((product: ProductType) => (
-          <ProductCardComponent
-            key={product.id}
-            image={product.image}
-            name={product.name}
-            price={product.price}
-            desc={product.desc}
-          />
-        ))}
+        <Suspense fallback={<LoadingComponent />} >
+          {products?.map((product: ProductType) => (
+            <ProductCardComponent
+              key={product.id}
+              image={product.image}
+              name={product.name}
+              price={product.price}
+              desc={product.desc}
+            />
+          ))}
         </Suspense>
       </div>
     </>

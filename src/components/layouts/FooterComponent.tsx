@@ -188,10 +188,10 @@ export const FooterComponent = () => {
                 </div>
             </div>
 
-            <div className="bg-gray-900 p-6 text-center text-white">
-                <span>© 2023 Copyright:</span>
+            <div className="bg-blue-500 p-4 text-center text-white">
+                <span>© 2024 Copyright:</span>
                 <a className="font-semibold" href="https://tw-elements.com/"
-                >TW Elements</a>
+                > Tink Product</a>
             </div>
         </footer>
     )

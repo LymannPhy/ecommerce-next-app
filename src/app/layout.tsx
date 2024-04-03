@@ -8,6 +8,7 @@ import LoadingComponent from "./loading";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 import Error from "./error";
 import { FooterComponent } from "@/components/layouts/FooterComponent";
+import HeaderComponent from "@/components/layouts/HeaderComponent";
 
 const poppins = Poppins({ 
   subsets: ["latin"],
@@ -51,6 +52,7 @@ export default function RootLayout({
       <body className={`${poppins.variable} ${kantumruy_pro.variable}`}>
         <NextUILayout>
           <NavbarComponent />
+          <HeaderComponent/>
           <Suspense> 
             <ErrorBoundary errorComponent={Error}>
               {children}

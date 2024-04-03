@@ -1,105 +1,45 @@
 "use client";
-import React from "react";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  Button,
-  NavbarMenu,
-  NavbarMenuItem,
-  NavbarMenuToggle,
-} from "@nextui-org/react";
-import Link from "next/link";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { navbarItem } from "../../types/menu";
 
-export default function App() {
-  const pathname = usePathname();
+import { Button, Navbar } from "flowbite-react";
 
+export default function NavbarComponent() {
   return (
-    <Navbar className="bg-gray-900 text-white" disableAnimation>
-      <NavbarContent className="sm:hidden">
-        <NavbarMenuToggle />
-      </NavbarContent>
-
-      <NavbarContent className="sm:hidden pr-3">
-        <NavbarBrand>
-          <Image
-            width={40}
-            className="mr-4 rounded-full"
-            height={40}
-            src={"/assets/logo.png"}
-            alt={""} 
-          />
-        </NavbarBrand>
-      </NavbarContent>
-
-      <NavbarContent className="hidden sm:flex gap-4 lg:">
-        <NavbarBrand>
-          <Image
-            width={100}
-            className="rounded-full"
-            height={100}
-            src={"/assets/logo.png"}
-            alt={""}
-          />
-          {/* <p className="font-bold text-inherit uppercase">Lymann</p> */}
-        </NavbarBrand>
-      </NavbarContent>
-      <NavbarContent className="hidden sm:flex gap-10 lg: " justify="center">
-        {navbarItem.map((item, index: any) => (
-          <NavbarItem key={index}>
-            <Link
-              color="foreground"
-              href={item.path}
-              className={`${pathname === item.path && "font-bold text-blue-800"
-                }`}
+    <header className="sticky top-0 z-50">
+      <section className="w-[100%] mx-auto  shadow-ss1 flex justify-center">
+        <Navbar fluid rounded className=" w-[92%] ">
+          <Navbar.Brand href="page.tsx" className="py-2">
+            <img
+              src="/assets/tink-logo.jpg"
+              className="mr-3 h-6 sm:h-9"
+              alt="Tink Product Logo"
+            />
+            <span className="self-center whitespace-nowrap text-[22px] font-semibold text-blue-500">
+              TINK
+            </span>
+          </Navbar.Brand>
+          <div className="flex md:order-2">
+            <Button className="bg-blue-500 ">Dashboard</Button>
+            <Navbar.Toggle />
+          </div>
+          <Navbar.Collapse>
+            <Navbar.Link href="#" className="text-[18px] text-blue-600">
+              Home
+            </Navbar.Link>
+            <Navbar.Link
+              href="#"
+              className="text-[18px] text-gray-800 hover:text-emerald-600"
             >
-              {item.title}
-            </Link>
-          </NavbarItem>
-        ))}
-      </NavbarContent>
-
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="/dashboard">Dashboard</Link>
-        </NavbarItem>
-        <NavbarItem className="hidden lg:flex">
-          <Button as={Link} className="bg-gradient-to-r from-blue-500 to-pink-400 text-white" href="/login" variant="flat">
-            Login
-          </Button>
-        </NavbarItem>
-
-      </NavbarContent>
-
-      <NavbarMenu>
-        {navbarItem.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              className="w-full"
-              color={
-                index === 2
-                  ? "warning"
-                  : index === navbarItem.length - 1
-                    ? "danger"
-                    : "foreground"
-              }
-              href={item.path}
+              About Us
+            </Navbar.Link>
+            <Navbar.Link
+              href="#"
+              className="text-[18px] text-gray-800 hover:text-emerald-600"
             >
-              {item.title}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-        <NavbarItem className="w-full text-[18px]">
-          <Link href="/dashboard">Dashboard</Link>
-        </NavbarItem>
-        <NavbarItem className="w-full text-[18px]">
-          <Link href="/dashboard">Login</Link>
-        </NavbarItem>
-      </NavbarMenu>
-    </Navbar>
+              Policy
+            </Navbar.Link>
+          </Navbar.Collapse>
+        </Navbar>
+      </section>
+    </header>
   );
 }
