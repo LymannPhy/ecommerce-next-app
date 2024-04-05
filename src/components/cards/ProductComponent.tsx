@@ -1,7 +1,8 @@
 "use client";
 
 import { ProductType } from "@/types/product";
-import { Card } from "flowbite-react";
+import Image from "next/image";
+
 
 function ProductCardComponent({ name, image, price, desc }: ProductType) {
 
@@ -10,7 +11,7 @@ function ProductCardComponent({ name, image, price, desc }: ProductType) {
     return (
         <div className="bg-white rounded-lg overflow-hidden shadow-lg max-w-sm">
             <div className="relative">
-                <img className="w-full" src={image} />
+                <Image src={image} alt="product-img" width={100} height={100} className="w-full h-[320px]"/>
                 <div className="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 m-2 rounded-md text-sm font-medium">SALE</div>
             </div>
             <div className="p-4">

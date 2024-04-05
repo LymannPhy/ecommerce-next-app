@@ -1,43 +1,52 @@
-// import { Suspense } from "react";
-// import LoadingComponent from "../loading";
-// import { ProductType } from "@/types/product";
-// import Link from "next/link";
-// import { Metadata } from "next";
-// import ProductCardComponent from "@/components/cards/ProductComponent";
+import { Suspense } from "react";
+import LoadingComponent from "../loading";
 
-// async function fetchData() {
-//   const data = await fetch("https://store.istad.co/api/products/")
-//   const res = await data.json()
-//   return res.results;
-// }
 
-// export const metadata: Metadata = {
-//   title: "Product",
-//   description: "This is Product page shop",
-//   keywords: ['shop', 'ecommerce', 'sell']
-// };
+import type { Metadata } from "next";
+import { ProductType } from "@/types/product";
+import ProductCardComponent from "@/components/cards/ProductComponent";
+import Link from "next/link";
+async function fetchProducts() {
+    const products = await fetch("https://store.istad.co/api/products", {
+        cache: "no-store"
+    });
+    const res = await products.json();
+    return res.results;
+}
 
-// export default async function Home() {
-//   const products = await fetchData()
+export const metadata: Metadata = {
+    title: "Home",
+    description: "This is a place where you can find and buy any types of product",
+    keywords: ["shop", "discount", "promotion", "coupon"],
+    openGraph: {
+        title: "Home",
+        description: "This is a place where you can find and buy any types of product",
+        images: [
+            "https://i.pinimg.com/564x/76/e6/b9/76e6b9355380c85fe9a80dddae96172c.jpg"
+        ]
+    }
+};
 
-//   return (
-//     <>
-//       <div className="mt-10 flex justify-center flex-wrap gap-5">
-//         <Suspense fallback={<LoadingComponent />}>
-//           {products.map((product: ProductType) => {
-//             return (
-//               <Link href={`/product/${product.id}`} key={product.id}>
-//                 <ProductCardComponent
-//                   name={product.name}
-//                   image={product.image}
-//                   price={product.price}
-//                   desc={product.desc}
-//                 />
-//               </Link>
-//             );
-//           })}
-//         </Suspense>
-//       </div>
-//     </>
-//   );
-// }
+export default async function Product() {
+    const products = await fetchProducts();
+
+    return (
+        <>
+            <div className="mt-10 flex justify-center flex-wrap gap-5">
+                <Suspense fallback={<LoadingComponent />} >
+                    {products?.map((product: ProductType) => (
+                        <Link href={`/product/${product.id}`} key={product.id}>
+                            <ProductCardComponent
+                                key={product.id}
+                                image={product.image}
+                                name={product.name}
+                                price={product.price}
+                                desc={product.desc}
+                            />
+                        </Link>
+                    ))}
+                </Suspense>
+            </div>
+        </>
+    );
+}

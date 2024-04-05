@@ -1,17 +1,7 @@
-import { Suspense } from "react";
-import LoadingComponent from "./loading";
-
-
 import type { Metadata } from "next";
-import { ProductType } from "@/types/product";
-import ProductCardComponent from "@/components/cards/ProductComponent";
-async function fetchProducts() {
-  const product = await fetch("https://store.istad.co/api/products/", {
-    cache: "no-store"
-  });
-  const res = await product.json();
-  return res.results;
-}
+import Product from "./product/page";
+import HeaderComponent from "@/components/layouts/HeaderComponent";
+import BrandComponent from "@/components/layouts/BrandComponent";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -27,28 +17,11 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const products = await fetchProducts();
-
   return (
     <>
-      <div className="mt-10 flex justify-center text-center flex-col flex-wrap gap-5">
-        <h1 className="mb-5 text-2xl font-bold !leading-[1.208] text-dark sm:text-[42px] lg:text-[40px] xl:text-3xl">
-          Any types of product, you discover
-        </h1>
-      </div>
-      <div className="mt-10 flex justify-center flex-wrap gap-5">
-        <Suspense fallback={<LoadingComponent />} >
-          {products?.map((product: ProductType) => (
-            <ProductCardComponent
-              key={product.id}
-              image={product.image}
-              name={product.name}
-              price={product.price}
-              desc={product.desc}
-            />
-          ))}
-        </Suspense>
-      </div>
+      <HeaderComponent/>
+      <BrandComponent/>
+      <Product/>
     </>
   );
 }

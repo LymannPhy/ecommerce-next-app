@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const HeaderComponent = () => {
@@ -29,13 +30,14 @@ const HeaderComponent = () => {
                             </h6>
 
                             <div className="flex items-center space-x-4">
-                                <img
-                                    src="https://istad.co/resources/img/CSTAD_120.png"
+                                <Image width={120} height={120}
+                                    alt="client"
+                                    src="/assets/CSTAD_120.png"
                                 />
 
-                                <img
-
-                                    src="https://www.mfaic.gov.kh/ministriesLogo/uploads/F9433KJCI9II/Ministry%20of%20Post%20and%20Telecommunications.png" width={120} height={120}
+                                <Image width={120} height={120}
+                                    alt='client'
+                                    src="/assets/Royal.png"
                                 />
                             </div>
                         </div>
@@ -45,8 +47,8 @@ const HeaderComponent = () => {
                 <div className="w-full px-4 lg:w-6/12">
                     <div className="lg:ml-auto lg:text-right">
                         <div className="relative z-10 inline-block pt-11 lg:pt-0">
-                            <img
-                                src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/blog-4.jpg"
+                            <Image width={1000} height={1000}
+                                src="/assets/shopping.jpg"
                                 alt="hero"
                                 className="max-w-full lg:ml-auto rounded-md"
                             />
