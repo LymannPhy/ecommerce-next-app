@@ -1,9 +1,14 @@
-import React from 'react'
+import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
 
-const layout = () => {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <div>layout</div>
-  )
+   <aside className="flex">
+   <DashboardSidebar/>
+    {children}
+   </aside>
+  );
 }
-
-export default layout

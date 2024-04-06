@@ -2,6 +2,7 @@
 
 import { Button, Navbar } from "flowbite-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function NavbarComponent() {
   return (
@@ -18,7 +19,7 @@ export default function NavbarComponent() {
             </span>
           </Navbar.Brand>
           <div className="flex md:order-2">
-            <Button className="bg-blue-500 ">Dashboard</Button>
+            <Button as={Link} href="/dashboard" className="bg-blue-500 ">Dashboard</Button>
             <Navbar.Toggle />
           </div>
           <Navbar.Collapse>
