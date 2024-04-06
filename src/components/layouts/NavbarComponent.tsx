@@ -3,8 +3,11 @@
 import { Button, Navbar } from "flowbite-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { navbarItem } from "../../types/menu";
 
 export default function NavbarComponent() {
+  const pathname = usePathname();
   return (
     <header className="sticky top-0 z-50">
       <section className="w-[100%] mx-auto  shadow-ss1 flex justify-center">
@@ -23,21 +26,16 @@ export default function NavbarComponent() {
             <Navbar.Toggle />
           </div>
           <Navbar.Collapse>
-            <Navbar.Link href="/" className="text-[18px] text-blue-600">
-              Home
+          {navbarItem.map((item, index: any) => (
+            <Navbar.Link key={index} color="foreground"
+            href={item.path}
+            className={`${
+              pathname === item.path && "font-bold text-[18px] text-blue-600"
+            }`}>
+              {item.title}
             </Navbar.Link>
-            <Navbar.Link
-              href="/about-us"
-              className="text-[18px] text-gray-800 hover:text-emerald-600"
-            >
-              About Us
-            </Navbar.Link>
-            <Navbar.Link
-              href="/policy"
-              className="text-[18px] text-gray-800 hover:text-emerald-600"
-            >
-              Policy
-            </Navbar.Link>
+            ))}
+
           </Navbar.Collapse>
         </Navbar>
       </section>

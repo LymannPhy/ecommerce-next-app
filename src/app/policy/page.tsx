@@ -1,5 +1,19 @@
 import React from 'react'
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+    title: "Policy",
+    description: "Learn about TinkProduct Online's policies regarding privacy, terms of service, and more.",
+    keywords: ["policy", "privacy", "terms of service", "refund", "shipping"],
+    openGraph: {
+      title: "Policy - TinkProduct Online",
+      description: "Learn about TinkProduct Online's policies regarding privacy, terms of service, and more.",
+      images: [
+        "https://example.com/policy-image.jpg"
+      ]
+    }
+  };
+  
 const page = () => {
   return (
     <div className="bg-gray-100 w-[90%] mx-auto rounded-md mt-10 shadow-lg">

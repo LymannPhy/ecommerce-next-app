@@ -1,4 +1,7 @@
 'use client';
+
+import Image from "next/image";
+
 export const FooterComponent = () => {
     return (
 
@@ -73,20 +76,15 @@ export const FooterComponent = () => {
                         <h6
                             className="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
                             <span className="me-3 [&>svg]:h-4 [&>svg]:w-4">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor">
-                                    <path
-                                        d="M12.378 1.602a.75.75 0 00-.756 0L3 6.632l9 5.25 9-5.25-8.622-5.03zM21.75 7.93l-9 5.25v9l8.628-5.032a.75.75 0 00.372-.648V7.93zM11.25 22.18v-9l-9-5.25v8.57a.75.75 0 00.372.648l8.628 5.033z" />
-                                </svg>
+                                <Image width={50} height={50}
+                                    src="/assets/tink-logo.jpg"
+                                    alt="Tink Product Logo"
+                                />
                             </span>
-                            TW Elements
+                            TinkProduct Online
                         </h6>
                         <p>
-                            Here you can use rows and columns to organize your footer
-                            content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit.
+                        Explore endless possibilities with TinkProduct Online! From cutting-edge electronics to trendy fashion and cozy home essentials, we bring unparalleled convenience to your doorstep.
                         </p>
                     </div>
                     <div>
@@ -95,16 +93,16 @@ export const FooterComponent = () => {
                             Products
                         </h6>
                         <p className="mb-4">
-                            <a href="#!">Angular</a>
+                            <a href="#!">Clothing</a>
                         </p>
                         <p className="mb-4">
-                            <a href="#!">React</a>
+                            <a href="#!">Shoes</a>
                         </p>
                         <p className="mb-4">
-                            <a href="#!">Vue</a>
+                            <a href="#!">Accessories</a>
                         </p>
                         <p>
-                            <a href="#!">Laravel</a>
+                            <a href="#!">Watches</a>
                         </p>
                     </div>
                     <div>
@@ -113,16 +111,16 @@ export const FooterComponent = () => {
                             Useful links
                         </h6>
                         <p className="mb-4">
-                            <a href="#!">Pricing</a>
+                            <a href="/">Home</a>
                         </p>
                         <p className="mb-4">
-                            <a href="#!">Settings</a>
+                            <a href="/about-us">About Us</a>
                         </p>
                         <p className="mb-4">
-                            <a href="#!">Orders</a>
+                            <a href="/policy">Policy</a>
                         </p>
                         <p>
-                            <a href="#!">Help</a>
+                            <a href="/dashboard">Dashboard</a>
                         </p>
                     </div>
                     <div>
@@ -142,7 +140,7 @@ export const FooterComponent = () => {
                                         d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
                                 </svg>
                             </span>
-                            New York, NY 10012, US
+                            No. 24, Khan Toul Kork, Phnom Penh
                         </p>
                         <p className="mb-4 flex items-center justify-center md:justify-start">
                             <span className="me-3 [&>svg]:h-5 [&>svg]:w-5">
@@ -156,7 +154,7 @@ export const FooterComponent = () => {
                                         d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                                 </svg>
                             </span>
-                            info@example.com
+                            lymannphy9@gmail.com
                         </p>
                         <p className="mb-4 flex items-center justify-center md:justify-start">
                             <span className="me-3 [&>svg]:h-5 [&>svg]:w-5">
@@ -169,7 +167,7 @@ export const FooterComponent = () => {
                                     />
                                 </svg>
                             </span>
-                            + 01 234 567 88
+                            (+855) 31 598 866
                         </p>
                         <p className="flex items-center justify-center md:justify-start">
                             <span className="me-3 [&>svg]:h-5 [&>svg]:w-5">
@@ -182,7 +180,7 @@ export const FooterComponent = () => {
                                     />
                                 </svg>
                             </span>
-                            + 01 234 567 89
+                            (+855) 97 64 42 131
                         </p>
                     </div>
                 </div>

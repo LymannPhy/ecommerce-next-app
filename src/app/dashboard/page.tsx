@@ -1,5 +1,19 @@
 import ProductTable from "@/components/table/ProductTable";
 import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dashboard",
+  description: "Welcome to your personalized dashboard. Stay updated on your activities, manage your account, and explore new features.",
+  keywords: ["dashboard", "account management", "activity tracking", "personalized experience"],
+  openGraph: {
+    title: "Dashboard - TinkProduct Online",
+    description: "Welcome to your personalized dashboard. Stay updated on your activities, manage your account, and explore new features.",
+    images: [
+      "https://example.com/dashboard-image.jpg"
+    ]
+  }
+};
 
 const page = () => {
   return (

@@ -8,11 +8,8 @@ export const navbarItem = [
         path : "/about-us"
     },
     {
-        title : "Product",
-        path : "/product"
+        title : "Policy",
+        path : "/policy"
     },
-    {
-        title : "store",
-        path : "/store"
-    }
+
 ]
