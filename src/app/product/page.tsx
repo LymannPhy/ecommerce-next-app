@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import { ProductType } from "@/types/product";
 import ProductCardComponent from "@/components/cards/ProductComponent";
 import Link from "next/link";
+import { ProductTypeHomePage } from "@/types/products";
 async function fetchProducts() {
     const products = await fetch("https://store.istad.co/api/products", {
         cache: "no-store"
@@ -34,7 +35,7 @@ export default async function Product() {
         <>
             <div className="mt-10 flex justify-center flex-wrap gap-5">
                 <Suspense fallback={<LoadingComponent />} >
-                    {products?.map((product: ProductType) => (
+                    {products?.map((product: ProductTypeHomePage) => (
                         <Link href={`/product/${product.id}`} key={product.id}>
                             <ProductCardComponent
                                 key={product.id}

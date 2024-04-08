@@ -1,10 +1,11 @@
 "use client";
 
 import { ProductType } from "@/types/product";
+import { ProductTypeHomePage } from "@/types/products";
 import Image from "next/image";
 
 
-function ProductCardComponent({ name, image, price, desc }: ProductType) {
+function ProductCardComponent({ name, image, price, desc }: ProductTypeHomePage) {
 
     const limitedDesc = desc.slice(0, 88) + (desc.length > 88 ? "..." : "");
 

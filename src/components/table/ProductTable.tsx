@@ -15,9 +15,8 @@ import { useState, useEffect } from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
 import { IoEllipsisHorizontal } from "react-icons/io5";
 import Image from "next/image";
-import { ProductType } from "@/types/product";
+import { EditProductType, ProductType } from "@/types/product";
 import { ACCESS_TOKEN } from "../constants/baseApi";
-import { EditProductType } from "@/types/editProduct";
 
 type DataRow = {
   title: string;
