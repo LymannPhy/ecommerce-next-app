@@ -61,6 +61,7 @@ const CreateProductForm = () => {
         method: "POST",
         headers: myHeaders,
         body: JSON.stringify({
+          
           ...values,
           image: imageUrl,
         }),
@@ -107,9 +108,6 @@ const CreateProductForm = () => {
                 name="name"
                 type="text"
               />
-              {/* <ErrorMessage name="email">
-                {(msg) => <p className="text-red-600 text-sm italic">{msg}</p>}
-              </ErrorMessage> */}
             </div>
             {/* description */}
             <div className="flex flex-col gap-2">
@@ -120,9 +118,6 @@ const CreateProductForm = () => {
                 name="desc"
                 type="text"
               />
-              {/* <ErrorMessage name="email">
-                {(msg) => <p className="text-red-600 text-sm italic">{msg}</p>}
-              </ErrorMessage> */}
             </div>
             {/* price */}
             <div className="flex flex-col gap-2">
@@ -133,9 +128,6 @@ const CreateProductForm = () => {
                 name="price"
                 type="number"
               />
-              {/* <ErrorMessage name="email">
-                {(msg) => <p className="text-red-600 text-sm italic">{msg}</p>}
-              </ErrorMessage> */}
             </div>
             {/* quantity */}
             <div className="flex flex-col gap-2">
@@ -146,9 +138,6 @@ const CreateProductForm = () => {
                 name="quantity"
                 type="number"
               />
-              {/* <ErrorMessage name="email">
-                {(msg) => <p className="text-red-600 text-sm italic">{msg}</p>}
-              </ErrorMessage> */}
 
               {/* Image  */}
               <div>
@@ -168,7 +157,7 @@ const CreateProductForm = () => {
             <div>
               <button
                 type="submit"
-                className="w-full px-4 py-3 bg-pink-600 text-white rounded-md"
+                className="w-full px-4 py-3 bg-blue-600 text-white rounded-md"
                 disabled={isSubmitting}
               >
                 Create

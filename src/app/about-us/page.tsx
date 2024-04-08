@@ -213,7 +213,7 @@ const page = () => {
                   Why Choose Us
                 </span>
                 <h2 className="mb-5 text-3xl font-bold text-dark dark:text-white sm:text-[40px]/[48px]">
-                  Tink Product
+                  TinkProduct
                 </h2>
                 <p className="mb-5 text-base text-body-color dark:text-dark-6">
                   At Tink Product, we understand that your home is more than just a place to live – it a

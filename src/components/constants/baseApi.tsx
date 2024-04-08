@@ -1,1 +1,2 @@
 export const BASE_API_URL = "https://store.istad.co/api/"
+export const ACCESS_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0NzI3MzcyLCJpYXQiOjE3MTI1NjczNzIsImp0aSI6IjQxODFmZWM1NTI5MDRmMzRiNTE2OTJmODM0ODYyMDY1IiwidXNlcl9pZCI6MzB9.gHV6zKBJuivupPHl_rPxcJ8snF2iZQL0-gkE21It5zk"

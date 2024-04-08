@@ -19,7 +19,7 @@ export default function NavbarComponent() {
             />
             <span className="self-center whitespace-nowrap text-[22px] font-semibold text-blue-500">
               TINK
-            </span>
+            </span><p className="self-center whitespace-nowrap text-[22px] font-semibold">PRODUCT</p>
           </Navbar.Brand>
           <div className="flex md:order-2">
             <Button as={Link} href="/dashboard" className="bg-blue-500 ">Dashboard</Button>
