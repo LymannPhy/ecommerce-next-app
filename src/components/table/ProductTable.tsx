@@ -68,10 +68,10 @@ const ProductTable = () => {
     setProductEdit({
       ...value,
       category: {
-        name: value.category.name
+        name: value.category
       },
     })
-
+    // console.log(value.category.name)
   }
 
   const handleDelete = async (id: number) => {

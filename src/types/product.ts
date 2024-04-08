@@ -14,9 +14,7 @@ export type EditProductType = {
     name: string,
     image: string,
     price:string,
-    category: {
-        name: string,
-    }
+    category: any,
     desc:string,
     seller:string
 }
